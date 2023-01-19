@@ -1,0 +1,25 @@
+.main {
+    padding: 50px 0;
+    background: no-repeat url('../../assets/images/footer/footer.jpg') right;
+    background-size: cover;
+    min-height: 180px;
+    color: white;
+
+    h2 {
+        text-align: center !important;
+        font-size: 20px;
+        line-height: 23px;
+        font-weight: 300;
+    }
+
+    .social {
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+
+        img {
+            cursor: pointer;
+        }
+    }
+}

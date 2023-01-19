@@ -1,0 +1,40 @@
+.main {
+    &Inner {
+        padding-bottom: 150px;
+        background: url('../../assets/images/main/back.jpg');
+        min-height: 100vh;
+    }
+
+    .filter {
+        position: relative;
+        background: none;
+        display: flex;
+        justify-content: flex-end;
+        &Btn {
+            padding: 13px 62px;
+            border-radius: 0px 0px 0px 19px;
+            font-size: 20px;
+            line-height: 23px;
+            font-weight: 500;
+            
+
+            &::after {
+                content: url('../../assets/images/filter/arrow_two.svg');
+                width: 20px;
+                height: 20px;
+                position: absolute;
+                right: 26px;
+                transition: .2s ease-in;
+                transform-origin: center;
+            }
+        }
+
+        &OpenedBtn {
+            &::after {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    
+}

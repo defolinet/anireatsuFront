@@ -1,0 +1,120 @@
+.search {
+    flex: 0 1 540px;
+    position: relative;
+
+    .searchBox {
+        display: flex;
+        justify-content: space-between;
+        background: white;
+        border: 2px solid #878787;
+        border-radius: 8px;
+        transition: all .1s ease-in;
+        overflow: hidden;
+        position: relative;
+        z-index: 6;
+
+        img.rot {
+            animation: 1s linear 0s normal none infinite running rot;
+            -webkit-animation: 1s linear 0s normal none infinite running rot;
+        }
+        @keyframes rot {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @-webkit-keyframes rot {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+        }
+    
+        &Container {
+            flex: 0 1 100%;
+            padding: 7px 11px 7px 16px;
+            overflow: hidden;
+            display: flex;
+            gap: 16px;
+        }
+    
+        input {
+            flex-grow: 1;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 20px;
+            line-height: 24px;
+            caret-color: #D27016;
+        }
+    
+    
+        .searchIcon {
+            transition: 0.1s linear all;
+        }
+    
+        .searchIconFocus {
+            margin-left: -34px;
+        }
+    
+        .searchBtn {
+            background: #FFA756;
+            align-self: stretch;
+            padding: 0 17px;
+            border-radius: 1px 6px 6px 0px;
+            transition: all 0.1s linear;
+            margin-right: -10%;
+        }
+    
+        .searchBtnFocus {
+            margin-right: 0;
+        }
+    
+        .crossBtn {
+            transition: 0.1s linear all;
+            opacity: 1;
+        }
+    
+        .crossBtnHide {
+            opacity: 0;
+            display: none;
+        }
+    }
+
+    .hint {
+        background: #101010;
+        position: absolute;
+        top: 40px;
+        width: 100%;
+        padding: 10px 0 10px 15px;
+        z-index: 5;
+
+        &List {
+            list-style-type: none;
+        }
+
+        li {
+            text-align: start;
+
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+
+        &Link {
+            font-size: 20px;
+            line-height: 24px;
+            color: #BC6F29;
+            text-decoration: underline;
+        }
+    }
+}
+
+
+.searchBoxFocus {
+    border: 2px solid #D27016;
+}

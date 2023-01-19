@@ -1,0 +1,62 @@
+.main {
+    color: white;
+
+    .eded {
+        color: red;
+    }
+
+    .accordion {
+        background: none;
+        color: white;
+        box-shadow: none;
+
+        
+
+        &Title {
+            margin: 0;
+            font-size: 24px;
+            line-height: 28px;
+            color: white;
+            font-weight: 600;
+        }
+    }
+
+    
+
+    .arrowIcon {
+        width: 31px;
+        height: 31px;
+    }
+
+    .closeAccordBtn {
+        &::after {
+            transform: rotate(-180deg);
+        }
+    }
+
+    .closeAccord {
+        height: 0;
+    }
+
+    .genres {
+        margin: 60px 0 0 80px;
+        transition: 0.3s all ease-in;
+        transform-origin: center;
+
+        ul {
+            margin: 0;
+            list-style-type: none;
+            width: fit-content;
+            display: grid;
+            grid-template-columns: repeat(5, auto);
+            grid-template-rows: repeat(2, auto);
+            grid-column-gap: 70px;
+            grid-row-gap: 40px;
+        }
+    }
+
+    .genresClose {
+        height: 0px;
+        padding: 0 0 0 80px;
+    }
+}
