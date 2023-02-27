@@ -2,10 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { selectedAnimes } from '../../store/selectors'
 import Card from '../card/Card'
-import s from './cards.module.scss'
+import s from './cards.module.css'
 
-function Cards() {
-    const animes = useSelector(selectedAnimes) || []
+function Cards({animes, isDeleteOption}) {
+
 
     // animes.forEach(e => console.log(e.name))
 
@@ -15,10 +15,12 @@ function Cards() {
                 animes.map(anime => <Card 
                     key={anime.id} 
                     name={anime.name} 
-                    photo={anime.images?.card}
+                    photo={`http://localhost:3001/${anime.images?.card}`}
                     rating={anime.rating}
                     restriction={anime.restriction}
-                    url={anime.url}
+                    url={`/main${anime.url}`}
+                    isDeleteOption={isDeleteOption}
+                    id={anime.id}
                 />)
             }
         </ul>

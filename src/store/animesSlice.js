@@ -8,14 +8,8 @@ export const getAnimes = createAsyncThunk(
         // dispatch(animesLoading(true))
         try {
             const response = await axios.get(
-                `/anime?${data?.sSearch ? `search=${data?.sSearch}&` : ''}${data?.sGenres ? `genres=${data?.sGenres.join(',')}&` : ''}${data?.sSort ? `sort=${data?.sSort.by}&` : ''}${data?.sSort ? `as=${data?.sSort.as}&` : ''}${data?.sOffset ? `offset=${data?.sOffset}&` : ''}${data?.sDate ? `date=${data?.sDate.join(',')}&` : ''}`
+                `https://busy-erin-lion-suit.cyclic.app/anime?${data?.sSearch ? `search=${data?.sSearch}&` : ''}${data?.searchById ? `searchById=${data?.searchById.join(',')}&` : ''}${data?.sGenres ? `genres=${data?.sGenres.join(',')}&` : ''}${data?.sSort ? `sort=${data?.sSort.by}&` : ''}${data?.sSort ? `as=${data?.sSort.as}&` : ''}${data?.sOffset ? `offset=${data?.sOffset}&` : ''}${data?.sDate ? `date=${data?.sDate.join(',')}&` : ''}`
             )
-            // console.log(`/anime?
-            //     ${data?.sSearch ? `search=${data?.sSearch}&` : ''}
-            //     ${data?.sGenres.length ? `genres=${data?.sGenres.join(',')}&` : ''}
-            //     ${data?.sSort ? `sort=${data?.sSort}&` : ''}
-            //     ${data?.sOffset ? `offset=${data?.sOffset}&` : ''}
-            // `);
             const animesData = await response.data
             dispatch(animesCount(animesData.count))
             dispatch(animesLimit(animesData.result.length))
@@ -24,7 +18,7 @@ export const getAnimes = createAsyncThunk(
             dispatch(animesInfo(animesData.result))
             
         } catch (e) {
-            console.log(e);
+            return rejectWithValue(e.message)
         }
     }
 )
@@ -47,7 +41,7 @@ const animesSlice = createSlice({
             },
             sDate: [0, 0]
         },
-        isLoading: false
+        status: ''
     },
     reducers: {
         animesInfo: (state, action) => {
@@ -88,11 +82,14 @@ const animesSlice = createSlice({
     extraReducers: (builder) =>
         builder
             .addCase(getAnimes.pending, (state) => {
-                state.isLoading = true
+                state.status = 'loading'
             }) 
             .addCase(getAnimes.fulfilled, (state) => {
-                state.isLoading = false
+                state.status = 'finish'
             }) 
+            .addCase(getAnimes.rejected, (state) => {
+                state.status = 'error'
+            })
 })
 
 export const {animesInfo, animesCount, animesLoading, animesClear, animesLimit, oldestYear, newestYear, animesParams, paramsClear} = animesSlice.actions

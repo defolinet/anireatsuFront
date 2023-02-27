@@ -1,0 +1,14 @@
+.main {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 17px;
+    color: #BC6F29;
+}
+
+.main h2 {
+    font-size: 24px;
+    line-height: 25px;
+}

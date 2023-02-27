@@ -1,0 +1,209 @@
+.main {
+    background: url('../../assets/images/main/back.jpg');
+    min-height: 100vh;
+}
+
+.head {
+    padding: 30px 0;
+    background-color: black;
+    color: white;
+    border-bottom: 3px solid #FFA756;
+}
+
+.container {
+    max-width: 1540px;
+    margin: 0 auto;
+}
+
+.headContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.headLeft {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.avaBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ava {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+.ava.edit {
+    filter: brightness(0.5);
+}
+
+.avaEdit {
+    position: absolute;
+}
+
+.avaEdit img {
+    width: 50px;
+}
+
+.infoBlock h2 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.editWrapper {
+    position: relative;
+}
+
+.infoEdit {
+    position: absolute;
+    top: 0;
+    right: -40px;
+}
+
+.headRight {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    align-self: stretch;
+    gap: 30px;
+}
+
+.hrTop {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.cross {
+    width: 35px;
+    height: 35px;
+}
+
+.options {
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    background: #FFA756;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    color: #151515;
+    overflow: hidden;
+}
+
+.optionsB {
+    display: flex;
+    overflow: hidden;
+}
+
+.optionsOneB {
+    max-width: 250px;
+    padding: 5px 8px 5px 20px;
+    border-radius: 20px 0 0 20px;
+    transition: 0.3s ease-in-out all;
+}
+
+.optionsOneB.edit {
+    max-width: 0px;
+}
+
+.optionsOneB span {
+    white-space: nowrap;
+    opacity: 0;
+    transition: 0.3s ease-in-out all;
+}
+
+.optionsOneB span.edit {
+    opacity: 1;
+}
+
+.optionsTwoB {
+    padding: 5px 25px 5px 0;
+    border-radius: 0 20px 20px 0;
+}
+
+.optionsTwoB img {
+    transition: 0.3s ease-in-out all;
+}
+
+.optionsTwoB.edit img {
+    transform: rotate(180deg);
+}
+
+.editInput {
+    padding: 5px 10px;
+    font-size: 40px;
+    /* width: fit-content; */
+    border-radius: 10px;
+    color: white;
+    background: none;
+    border: 1px solid #FFA756;
+}
+
+.body {
+    padding: 30px 0 170px;
+    color: white;
+}
+
+.bodyBlock:not(:first-child) {
+    margin-top: 85px;
+}
+
+.bbHead {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.body h2 {
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 38px;
+}
+
+.bbBody {
+    margin-top: 30px;
+}
+
+.warn {
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .container {
+        padding: 0 30px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .headLeft {
+        gap: 13px;
+    }
+    .ava {
+        width: 60px;
+        height: 60px;
+    }
+    .optionsTwoB {
+        padding: 7px 13px;
+        border-radius: 35px;
+    }
+    .editWrapper h2 {
+        font-size: 20px;
+    }
+    .headRight img, .headLeft img:not(.ava) {
+        width: 25px !important;
+        height: 25px !important;
+    }
+    .hrTop {
+        gap: 10px;
+    }
+}

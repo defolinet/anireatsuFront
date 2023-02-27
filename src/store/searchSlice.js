@@ -5,8 +5,10 @@ export const getSearchedAnimes = createAsyncThunk(
     'getSearchedAnimes',
     async function (data, {dispatch}) {
         try {
-            const response = await axios.get(`anime?search=${data.toLowerCase()}&limit=6`)
+            
+            const response = await axios.get(`https://busy-erin-lion-suit.cyclic.app/anime?search=${data.toLowerCase().replace(/ /g, '')}&limit=6`)
             const animesData = await response.data
+            console.log(response);
             dispatch(setSearchedAnimes(animesData.result))
         } catch (e) {
             console.log(e);
@@ -40,10 +42,7 @@ const searchSlice = createSlice({
                 state.status = 'loading'
             })
             .addCase(getSearchedAnimes.fulfilled, (state) => {
-                // console.log(action);
-                if(state.animes.length){
-                    state.status = 'finish'
-                } 
+                state.status = 'finish'
             })
 })
 

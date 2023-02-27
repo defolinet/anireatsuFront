@@ -6,6 +6,14 @@
     background: url('../../assets/images/banner/back_two.jpg') bottom;
 }
 
+.backTablet {
+    background: url('../../assets/images/banner/banner-tablet.jpg');
+}
+
+.backMobile {
+    background: url('../../assets/images/banner/banner-modile.jpg');
+}
+
 .main {
     
     height: 100vh;
@@ -55,10 +63,51 @@
             color: #FFA756;
             margin: 105px 0 35px;
             font-weight: 900;
+            text-align: center;
         }
         a {
             padding: 5px 35px;
             font-size: 32px;
         }
+    }
+}
+
+.ava {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #BC6F29;
+}
+
+.btn {
+    padding: 6px 35px;
+    width: fit-content;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px !important;
+    }
+
+    .container {
+        align-items: end !important;
+        padding-bottom: 70px;
+    }
+
+    .registerBlock {
+        right: 30px !important;
+        top: 30px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 36px !important;
+    }
+
+    .registerBlock {
+        right: 12px !important;
+        top: 12px !important;
     }
 }

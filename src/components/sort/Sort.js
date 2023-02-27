@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import s from './sort.module.scss'
+import s from './sort.module.css'
 import { ToggleButton, ToggleButtonGroup } from "@mui/material";
 import { useDispatch, useSelector } from 'react-redux';
 import { animesParams } from '../../store/animesSlice';
+import useMatchMedia from 'use-match-media';
 
 function Sort() {
     const dispatch = useDispatch()
     const params = useSelector(state => state.animes.params)
+    const isBigMobile = useMatchMedia('(max-width: 620px)')
 
     const handleSortButtons = (e, updatedSortButtons) => {
         dispatch(animesParams({
@@ -28,12 +30,15 @@ function Sort() {
         }
     }
 
+
     const styleSettingsBtn = [{
+        padding: '',
         background: '#BC6F29',
         color: '#101010',
         fontWeight: '600',
-        fontSize: '18px',
+        fontSize: isBigMobile ? '14px' : '18px',
         textTransform: 'none',
+        whiteSpace: 'nowrap',
         '&:hover': {
             background: '#a57b53'
         }

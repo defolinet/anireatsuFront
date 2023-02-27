@@ -1,0 +1,36 @@
+.main {
+    padding: 20px 0;
+    background: #323232;    
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+    max-width: 1540px !important;
+}   
+
+.logoBlock {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.logoWrapper img {
+    width: 64px;
+    z-index: 2;
+    border-radius: 50%;
+    transition: all .2s ease-in;
+}
+
+.logoWrapper img:hover {
+    box-shadow: 0 0 15px #FFA756;
+}
+
+.ava {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    border: 3px solid #BC6F29;
+}

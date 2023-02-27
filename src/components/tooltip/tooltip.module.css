@@ -1,0 +1,31 @@
+.main {
+    position: absolute;
+    background: black;
+    border-radius: 13px;
+    left: -180%;
+    width: max-content;
+    max-height: 0;
+    transition: 0.2s linear all;
+    overflow: hidden;
+}
+
+.container {
+    padding: 8px 24px;
+}
+
+.main ul {
+    list-style-type: none;
+}
+
+.main a {
+    color: white !important;
+    transition: 0.2s linear all;
+}
+
+.main a:hover {
+    color: #FFA756 !important;
+}
+
+.show {
+    max-height: 120px;
+}

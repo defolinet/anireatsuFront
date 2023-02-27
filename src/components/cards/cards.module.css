@@ -1,0 +1,26 @@
+.main {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(4, 272px);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-content: center;
+}
+
+@media (max-width: 1300px) {
+    .main {
+        grid-template-columns: repeat(3, 272px);
+    }
+}
+
+@media (max-width: 920px) {
+    .main {
+        grid-template-columns: repeat(2, 272px);
+    }
+}
+
+@media (max-width: 620px) {
+    .main {
+        grid-template-columns: repeat(1, 272px);
+    }
+}

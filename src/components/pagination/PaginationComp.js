@@ -1,27 +1,27 @@
 import { Pagination, PaginationItem } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import useMatchMedia from 'use-match-media'
 import { animesClear, animesParams, getAnimes } from '../../store/animesSlice'
-import s from './pagination.module.scss'
+import s from './pagination.module.css'
 
 function PaginationComp() {
     const dispatch = useDispatch()
     const params = useSelector(state => state.animes.params)
-    const isLoading = useSelector(state => state.animes.isLoading)
+    const status = useSelector(state => state.animes.status)
     const [isDisabled, setIsDisabled] = useState(false)
     const animesCount = useSelector(state => state.animes.animesCount)
+    const isBigMobile = useMatchMedia('(max-width: 620px)')
+    const isSmallMobile = useMatchMedia('(max-width: 400px)')
 
     useEffect(() => {
-        setIsDisabled(isLoading)
-    }, [isLoading])
+        status === 'loading' ? setIsDisabled(true) : setIsDisabled(false)
+    }, [status])
 
     const handlePagination = (e, value) => {
-        setIsDisabled(true)
         dispatch(animesClear())
         dispatch(animesParams({sOffset: 16 * (value - 1)}))
-        dispatch(getAnimes({...params, sOffset: 16 * (value - 1)}))
-        // console.log(params);
-        
+        dispatch(getAnimes({...params, sOffset: 16 * (value - 1)}))        
     }
 
     const paginationStyle = [{
@@ -29,31 +29,32 @@ function PaginationComp() {
             justifyContent: 'center',
             li: {
                 '&:first-of-type': {
-                    marginRight: '10px'
+                    marginRight: isBigMobile ? '' : '10px'
                 },
                 '&:last-child': {
-                    marginLeft: '10px'
+                    marginLeft: isBigMobile ? '' : '10px'
                 }
             },
             svg: {
                 backgroundColor: '#FFA756',
                 borderRadius: '50%',
-                width: '38px',
-                height: '38px',
+                width: isBigMobile ? '30px' : '38px',
+                height: isBigMobile ? '30px' : '38px',
                 color: 'black',
             },
             button: {
-                fontSize: '32px',
+                fontSize: isSmallMobile ? '14px' : isBigMobile ? '22px' : '32px',
                 lineHeight: '38px',
                 fontWeight: '500',
-                color: '#BC6F29'
+                color: '#BC6F29',
+                margin: isSmallMobile ? '0' : '0 5px'
             },
             
         }
     }]
 
     return (
-        <div>
+        <div className={s.main}>
             <Pagination 
                 count={+(animesCount / 16).toFixed()}
                 defaultPage={1}

@@ -42,6 +42,10 @@ h1, h2, h3, h4, h5, h6 {
   text-align: start;
 }
 
+ul {
+  list-style-type: none;
+}
+
 .registerBlock {
   display: flex;
   gap: 22px;
@@ -59,14 +63,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 7px 17px;
   background: #FFA756;
   border-radius: 20px;
   font-weight: bold;
   font-size: 16px;
   transition: 0.3s;
-
-  
 }
 
 .btn:hover, .registerBtn:hover {
@@ -114,4 +119,27 @@ h1, h2, h3, h4, h5, h6 {
   background: #DEB085 !important;
   color: #101010 !important;
   text-decoration: none !important;
+}
+
+@media (max-width: 1300px) {
+  .container {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .registerBtn, .btn {
+    font-size: 16px;
+    padding: 2px 12px;
+  }
+
+  .registerBlock {
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 10px;
+  }
 }

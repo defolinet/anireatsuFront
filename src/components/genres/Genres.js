@@ -1,19 +1,28 @@
-import React, { useEffect, useState } from 'react'
-import s from './genres.module.scss'
-import { RadioGroup, FormControlLabel, Radio, Checkbox, FormGroup, Accordion, AccordionDetails, AccordionSummary, Typography } from "@mui/material";
-import checkedRadio from '../../assets/images/filter/checked_radio.svg'
-import radioIcon from '../../assets/images/filter/unchecked_radio.svg'
+import React, { useEffect } from 'react'
+import s from './genres.module.css'
+import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import arrow from '../../assets/images/filter/arrow.svg'
 import { useDispatch, useSelector } from 'react-redux';
-import { selectedGenres } from '../../store/selectors';
 import CheckboxComp from '../checboxComp/CheckboxComp';
+import { clearGenres, getGenres } from '../../store/genresSlice';
 
 function Genres() {
     const dispatch = useDispatch()
-    const genres = useSelector(selectedGenres) || []
+    const genres = useSelector(store => store.genres.genres)
+
+    useEffect(() => {
+        dispatch(getGenres())
+        return () => {
+            dispatch(clearGenres())
+        }
+    }, [])
 
     const Icon = ({iconLink, className}) => {
         return <img src={iconLink} className={className} alt="accordionImg" />
+    }
+
+    if(!genres.length) {
+        return <h1>Loading...</h1>
     }
 
     return (

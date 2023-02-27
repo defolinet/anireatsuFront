@@ -1,0 +1,261 @@
+.photoContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photos {
+    position: relative;
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    min-height: 620px;   
+    padding-top: 30px;
+}
+
+.backPhoto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+    filter: grayscale(100%);
+    mix-blend-mode: normal;
+    background-color: rgba(0, 0, 0, 0.16);
+    filter: brightness(0.16);
+    z-index: -1;
+    transform: scale(1.2);
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.innerPhoto {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    flex: 0 1 950px;
+    min-height: 480px;
+    background: no-repeat cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 10;
+    filter: brightness(1);
+    background-color: inherit;
+    border-radius: 40px;
+    padding: 0 40px 0 30px;
+}
+
+.restr {
+    margin-top: 20px;
+    font-size: 48px;
+    line-height: 32px;
+    color: #BC6F29;
+    text-shadow: 3px 3px 0 black;
+    font-weight: 900;
+}
+
+.rating {
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95px;
+    height: 95px;
+    background: #BC6F29;
+    border: 4px solid black;
+    border-radius: 50%;
+    font-size: 40px;
+    line-height: 27px;
+    color: #FFA756;
+    text-shadow: 3px 3px 0 black;
+    font-weight: 900;
+}
+
+.inner {
+    padding: 40px 0 110px;
+    min-height: 100vh;
+    background: url('../../assets/images/main/back.jpg');
+}
+
+.content {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info {
+    padding: 24px 0 24px 22px;
+    background: #101010;
+    border-radius: 25px;
+    max-width: 300px;
+}
+
+.info:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.infoList {
+    list-style-type: none;
+}
+
+.infoList li, .info h3 {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 23px;
+    color: #FFA756;
+    text-align: start;
+}
+
+.infoList li:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.info:last-child {
+    padding: 24px 0;
+}
+
+.info:last-child .infoList li {
+    text-transform: capitalize;
+    display: inline;
+}
+
+.info h3 {
+    margin-bottom: 5px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.plotBlock {
+    flex:  0 1 1000px;
+    padding: 25px 40px 33px;
+    background: #101010;
+    border-radius: 20px;
+}
+
+.plotBlock h1 {
+    font-size: 48px;
+    line-height: 45px;
+    color: #FFA756;
+    text-shadow: 3px 3px 0 black;
+    text-align: center;
+    margin-bottom: 13px;
+}
+
+.plot {
+    color: #FFA756;
+    line-height: 25px;
+    text-align: justify;
+}
+
+.minor {
+    margin-top: 80px;
+    padding: 20px 22px;
+    background: #101010;
+    border-radius: 25px;
+}
+
+.minorList {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.minorList img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.minorSlider {
+    margin-top: 50px;
+}
+
+@media only screen and (max-width: 1300px) {
+    .back {
+        top: 30px;
+        left: 35px;
+    }
+    .back img {
+        width: 54px;
+        height: 54px;
+    }
+    .innerPhoto {
+        margin-top: 80px;
+        max-width: 620px;
+        min-height: 357px;
+        background-position: center;
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .photos {
+        min-height: 587px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .photoContainer {
+        padding: 0 75px;
+    }
+    .rating {
+        font-size: 32px;
+    }
+    .content {
+        flex-direction: column;
+        gap: 45px;
+    }
+    .content p, .infoList li {
+        font-size: 12px !important;
+        line-height: 18px !important;
+    }
+    .info {
+        padding: 25px;
+        white-space: nowrap !important;
+    }
+    .minorList {
+        gap: 10px;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .back {
+        top: 3px;
+        left: 12px;
+    }
+    .back img {
+        width: 33px;
+        height: 33px;
+    }
+    .photos {
+        min-height: 240px;
+        padding-bottom: 12px;
+        padding-top: 0;
+    }
+    .innerPhoto {
+        padding: 10px 10px 0 10px;
+        margin-top: 30px;
+        max-width: 296px;
+        min-height: 180px;
+    }
+    .photoContainer {
+        padding: 0 12px;
+    }
+    .restr {
+        font-size: 20px;
+        margin: 0;
+    }
+    .rating {
+        width: 39px;
+        height: 39px;
+        font-size: 14px;
+        line-height: 5px;
+        margin: 0;
+    }
+    .restr, .rating {
+        text-shadow: 1px 1px 0 black;
+    }
+}

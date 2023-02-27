@@ -1,0 +1,117 @@
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.5s;
+    z-index: 100;
+}
+
+.modal.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modalContent {
+    transform: translateY(40px);
+    transition: 0.5s;
+}
+
+.modalContent.active {
+    transform: translateY(0px);
+}
+
+.main {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 955px;
+    height: 565px;
+    max-width: 955px;
+    max-height: 565px;
+    background: #121212;
+    border: 5px solid #FFA756;
+    border-radius: 40px;
+    color: #FFA756;
+}
+
+.main h2 {
+    margin: 50px 0 10px;
+    font-size: 40px;
+    line-height: 47px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.avaChooseMain h2 {
+    margin: 0;
+    position: absolute;
+    top: 50px;
+    font-weight: 400;
+}
+
+.message {
+    display: block;
+    margin: 10px 0;
+    font-weight: 500;
+    font-size: 26px;
+    color: #FFA756;
+    line-height: 27px;
+}
+
+.avaTitle {
+    font-size: 32px;
+    text-transform: none !important;
+    color: white;
+}
+
+.avas {
+    margin-top: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.avas img:hover {
+    filter: brightness(0.20);
+}
+
+.main span {
+    font-size: 26px;
+    font-weight: 500;
+    text-transform: lowercase;
+}
+
+.leftIcon {
+    top: 50px;
+    left: 50px;
+    position: absolute;
+}
+
+.cross {
+    top: 50px;
+    right: 50px;
+    position: absolute;
+}
+
+.btn {
+    margin-top: 40px;
+    padding: 20px 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FFA756;
+    border-radius: 40px;
+    color: black;
+    font-size: 24px;
+    line-height: 25px;
+    font-weight: 600;
+}

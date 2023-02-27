@@ -2,7 +2,7 @@ import { Slider } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { animesParams } from '../../store/animesSlice';
-import s from './slider.module.scss'
+import s from './slider.module.css'
 
 function SliderComp() {
     const dispatch = useDispatch()

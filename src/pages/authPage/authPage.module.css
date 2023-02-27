@@ -1,0 +1,8 @@
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: no-repeat url('../../assets/images/auth/background.jpg');
+    background-size: cover;
+}

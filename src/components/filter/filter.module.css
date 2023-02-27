@@ -5,14 +5,14 @@
     height: auto;
     transition: .3s ease-in;
     overflow: hidden;
-    max-height: 845px;
+    max-height: 845px;    
+}
 
-    .search {
-        margin-top: 30px;
-        display: flex;
-        justify-content: flex-end;
-        gap: 10px;
-    }
+.search {
+    margin-top: 30px;
+    display: flex !important;
+    justify-content: flex-end;
+    gap: 10px;
 }
 
 .hide {
