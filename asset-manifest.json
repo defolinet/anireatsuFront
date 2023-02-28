@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/anireatsuFront/static/css/main.ed8eb133.css",
-    "main.js": "/anireatsuFront/static/js/main.dd7575bf.js",
+    "main.js": "/anireatsuFront/static/js/main.f5b4e06d.js",
     "static/media/back.jpg": "/anireatsuFront/static/media/back.3680d2854e4a2f50368b.jpg",
     "static/media/banner-modile.jpg": "/anireatsuFront/static/media/banner-modile.f235b891f940756066b6.jpg",
     "static/media/back_two.jpg": "/anireatsuFront/static/media/back_two.df73177e7dd9408269cc.jpg",
@@ -119,10 +119,10 @@
     "static/media/global-cross.svg": "/anireatsuFront/static/media/global-cross.af94f382509cd6f39fd29c78622d849c.svg",
     "static/media/default_checkbox.svg": "/anireatsuFront/static/media/default_checkbox.1867356b1c02fd25cda66dc5798d0293.svg",
     "main.ed8eb133.css.map": "/anireatsuFront/static/css/main.ed8eb133.css.map",
-    "main.dd7575bf.js.map": "/anireatsuFront/static/js/main.dd7575bf.js.map"
+    "main.f5b4e06d.js.map": "/anireatsuFront/static/js/main.f5b4e06d.js.map"
   },
   "entrypoints": [
     "static/css/main.ed8eb133.css",
-    "static/js/main.dd7575bf.js"
+    "static/js/main.f5b4e06d.js"
   ]
 }
